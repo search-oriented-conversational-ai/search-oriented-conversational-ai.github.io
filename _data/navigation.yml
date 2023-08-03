@@ -1,7 +1,3 @@
 main:
-  - title: "Previous: SCAI 2021"
-    url: /scai-2021/
-  - title: "QReCC Shared task 2022"
-    url: /scai-qrecc-2022/
-  - title: "QReCC Shared task 2021"
-    url: /scai-qrecc-2021/
+  - title: "Previous editions"
+    url: /previous/

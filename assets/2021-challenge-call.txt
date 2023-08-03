@@ -1,0 +1,39 @@
+*** Call for participation: SCAI QReCC 21 Conversational Question Answering Challenge ***
+
+We are pleased to announce that this year we will be hosting a shared task on open-domain conversational question answering (QA) co-located with SCAI 2021 (https://scai.info). The shared task aims to establish a reliable benchmark for conversational QA and encourage collaboration between communities working on dialogue response generation, passage retrieval and reading comprehension.
+
+Web page: https://scai.info/scai-qrecc
+Leaderboard: https://www.tira.io/task/scai-qrecc
+Registration: https://forms.gle/JFBXZXPtWPqbtLhu8
+
+Register to receive further updates, make leaderboard submissions, get access to the TIRA forum and keep in touch with other participating teams.
+
+* Submission deadline: September 8, 2021
+* Results announcement: September 30, 2021
+* Workshop presentations: October 8, 2021
+
+* Task *
+Conversational question answering (QA) is one of the core applications for retrieval-based chatbots. In conversational QA, the task is to answer a series of contextually-dependent questions like they may occur in a natural human-to-human conversation. It is also possible to participate with non-conversational approaches in the conversational task by using our question rewrites. For more details on question rewriting see [1].
+
+* Dataset *
+The challenge uses the QReCC dataset [1] for evaluation, to appear in NAACL’21 proceedings. The dataset contains 14K conversations with 81K question-answer pairs and 54M passages [2]. The passage collection was constructed by processing 10M web pages from the Common Crawl and the Wayback Machine [3]. We will use the submitted runs to pull alternative answers and relevant passages that are discovered by the participating systems to extend the coverage of the ground truth annotations and improve the evaluation metrics.
+
+* Evaluation *
+The primary evaluation metrics is F1 and EM performance on the QA task. However, we also, optionally, report MRR and ROUGE for passage retrieval and question rewriting subtasks to provide better insights on the performance over the intermediate steps.
+
+* Workshop *
+Participating teams will be invited to submit a short notebook paper detailing their approach for publication in conjunction with the SCAI’21 workshop [4].
+
+* Contact *
+scai-qrecc@googlegroups.com 
+
+
+Kind regards,
+
+Organisers of the SCAI QReCC shared task,
+Svitlana, Johannes and Maik
+
+[1] Anantha, R., Vakulenko, S., Tu, Z., Longpre, S., Pulman, S., & Chappidi, S. (2020). Open-Domain Question Answering Goes Conversational via Question Rewriting. NAACL’21 (to appear) https://arxiv.org/abs/2010.04898
+[2] https://github.com/apple/ml-qrecc
+[3] QReCC - Question Rewriting in Conversational Context (Version 2021-05-19) [Data set] https://zenodo.org/record/4772532#.YK48Fy0Rp0s
+[4] SCAI: Search-Oriented Conversational AI Online Event 8 October 2021 https://scai.info
