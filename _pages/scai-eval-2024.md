@@ -10,9 +10,14 @@ header:
 ---
 
 ### Synopsis
-What distinguishes a good search-oriented conversation with an AI from a bad one? There are many answers to this question. The goal of this shared task is to collect rationales, judgment guidelines, and automated measures for as many different answers as possible to provide the community with a conversation evaluation suite.
+What distinguishes a good search-oriented conversation with an AI from a bad one? Are better conversations more in-depth, shorter, or better backed up? Since many aspects of conversations can play a role for their evaluation, this shared task calls to the community to collect aspects of interest, guidelines for their manual assessment, and software for their automated assessment. The outcome will be a comprehensive evaluation suite and a collaborative publication of all contributors. 
 
-Register here to stay informed: TODO
+We seek contributions in three categories. Contributions can be novel or already published.
+1. Data. To capture the variety of search-oriented conversations (e.g., with or without AI, written or spoken, explorative or target-oriented), we seek contributions of one or more conversations in a common format.
+2. Evaluation aspects. To compile a comprehensive overview of aspects to evaluate search-oriented conversations by (e.g., relevance of information, fluency of conversation), we seek definitions, rationales, and annotation guidelines for aspects.
+3. Software.
+
+Register here to participate or just stay informed: TODO
 
 
 ### Schedule
@@ -25,25 +30,23 @@ Register here to stay informed: TODO
 
 
 ### Data
-This task employs a minimal but extensible conversation data format inspired by the <a href="https://github.com/daltonj/treccastweb/tree/master">TREC CAsT</a> format. The JSON format is exemplified below. Each JSON object within the root array represents one conversation, with each object in <code>turns</code> representing a single turn of that conversation in temporal order. Only the <code>utterance</code> and <code>response</code> attributes are mandatory for each entry of <code>turns</code>. The current dataset is available @TODO.
+The dataset consists of search-oriented conversations. Each conversation is formatted as follows, where each turn has an <code>utterance</code> and a <code>response</code>, and <i>may</i> have other attributes:
 
-<pre>
-[
-  {
-    "turns": [
-      {
-        "utterance": "markdown-text-sent-by-user",
-        "response": "markdown-text-sent-as-response-by-system",
-        "provenance": [ 
-          {
-            "text": "source-text-for-response"
-          }
-        ]
-      }
-    ]
-  }
-]
-</pre>
+```json
+{
+  "id": "conversation-id",
+  "turns": [
+    {
+      "id": "conversation-id-and-turn-id",
+      "utterance": "markdown-text-sent-by-user",
+      "response": "markdown-text-sent-as-response-by-system",
+      "provenance": [ 
+        { "text": "source-text-for-response" }
+      ]
+    }
+  ]
+}
+```
 
 
 #### Data submission
