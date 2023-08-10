@@ -9,14 +9,13 @@ header:
   overlay_image: /assets/images/bc.png
 ---
 
-### Synopsis
-What distinguishes a good search-oriented conversation with an AI from a bad one? Using a single aspect of conversations for evaluation fails to produce a complete picture, as aspects like information relevance, being true to some source, ease of understanding, and many more play a role. To assist researchers in evaluating their conversational search systems, this shared task calls to the community to collect a comprehensive evaluation suite: diverse example data, definitions and annotation guidelines for aspects to evaluate, and implemented evaluation metrics.
+What distinguishes a good search-oriented conversation with an AI from a bad one? Using a single aspect of conversations for evaluation fails to produce a complete picture, as aspects like information relevance, being true to some source, ease of understanding, and many more play a role. To assist researchers in evaluating their conversational search systems, this shared task calls to the community to collect comprehensive evaluation resources: example data of diverse search-oriented conversations, definitions and annotation guidelines for aspects to evaluate, and implemented evaluation metrics.
 
-1. [Data](#data-submission). To capture the variety of search-oriented conversations (e.g., written or spoken, explorative or target-oriented), we seek contributions of one or more example conversations in a common format.
+1. [Data](#data-submission). To capture the variety of search-oriented conversations (e.g., written or spoken, explorative or target-oriented), we seek contributions of one or more example conversations in English and in a common format.
 2. [Aspect definitions](#aspect-definition-submission). To compile a comprehensive overview of aspects to evaluate search-oriented conversations by, we seek contributions in terms of definitions and guidelines for human ground-truth annotation.
-3. [Metrics](#metric-submission). To create a software package to easily evaluate search-oriented conversations, we seek software that attempts to automatically recreate human annotations for search-oriented conversations (see 2.).
+3. [Metrics](#metric-submission). To create a software package for the evaluation of search-oriented conversations, we seek software that attempts to automatically recreate human annotations for search-oriented conversations (see 2.).
 
-You can submit both novel and already published material. The submission process (see below) is open to allow for feedback and discussions from the start. All contributors will be invited to co-author a publication (in [SIGIR Forum](https://sigir.org/forum/)) that summarizes the collected evaluation suite. In preparation for discussions at the SCAI workshop and in the paper, we expect every co-author to invest a bit of their time (about two hours each) in February to annotate a few conversations according to the submitted guidelines.
+You can submit both novel and already published material to one or more of the three categories. The submission process (see below) is open to allow for feedback and discussions from the start. All contributors will be invited to co-author a publication (in [SIGIR Forum](https://sigir.org/forum/)) that summarizes the collected evaluation suite. In preparation for discussions at the SCAI workshop and in the paper, we expect every co-author to invest a bit of their time (about two hours each) in February to annotate a few conversations according to the submitted guidelines.
 
 <a hreF="#">Register here</a> (TODO) to stay informed, <a href="https://www.tira.io/c/scai/8">discuss</a>, and participate!
 
@@ -32,7 +31,7 @@ You can submit both novel and already published material. The submission process
 
 
 ### Data submission
-We seek contributions of search-oriented conversations (with or without AI). Already published conversations are also welcome. Submissions must adhere to the following format, but the only required attributes are <code>turns</code>, <code>utterance</code>, and <code>response</code>. If your data contains attributes that are not shown here, we will expand this format upon your request. The current format is:
+We seek contributions of search-oriented conversations (with or without AI) in English. Already published conversations are also welcome. Submissions must adhere to the following format, but the only required attributes are <code>turns</code>, <code>utterance</code>, and <code>response</code>. If your data contains attributes that are not shown here, we will expand this format upon your request. The current format is:
 
 ```json
 {
@@ -48,15 +47,15 @@ We seek contributions of search-oriented conversations (with or without AI). Alr
 }
 ```
 
-To submit data, prepare it as <code>jsonl</code> file ([JSON lines](https://jsonlines.org/)), where each line contains one JSON object as shown above. Use our format checker (TODO: link to online format checker) to validate your <code>jsonl</code> file. Then submit it via TIRA (TODO: link) using a separate upload group for each dataset you provide. Upload new versions of the same dataset in the same upload group.
+To submit data, prepare it as <code>jsonl</code> file ([JSON lines](https://jsonlines.org/)), where each line contains one JSON object as shown above. Use our format checker (TODO: link to online format checker) to validate your <code>jsonl</code> file. Then submit it via TIRA (TODO: link) using a separate upload group for each dataset you provide. Upload new versions of the same dataset in the same upload group. Once uploaded, use the edit-button to add a short description (at least one paragraph on the data source) to your dataset.
 
-To request extensions to the data format or questions on the submission process, create a topic in the [SCAI Eval Data Submission forum](https://www.tira.io/c/scai/scai-eval-data-submission/12) (access granted upon registration).
+To request extensions to the data format or questions on the submission process, create a topic in the [SCAI Eval Data Submission forum](https://www.tira.io/c/scai/scai-eval-data-submission/12) (login provided upon registration).
 
 The collected dataset is freely available and its current version can be downloaded here (TODO: link to download).
 
 
 ### Aspect definition submission
-We seek contributions of aspects definitions and associated annotation guidelines for creating a ground-truth by annotating search-oriented conversations. To submit, create a topic in the [SCAI Eval Aspect Sefinition Submission forum](https://www.tira.io/c/scai/scai-eval-aspect-definition-submission/14) (access granted upon registration): this will bring up a template submission that you need to fill in, including the rationale for evaluating this aspect, unit of annotation (is it an aspect of a conversation or of a single turn?), possibility of multiple labels per unit, data attributes required for annotation (see [data submission](#data-submission)), annotation guidelines, and examples for each label.
+We seek contributions of aspects definitions and associated annotation guidelines for creating a ground-truth by annotating search-oriented conversations. To submit, create a topic in the [SCAI Eval Aspect Definition Submission forum](https://www.tira.io/c/scai/scai-eval-aspect-definition-submission/14) (login provided upon registration): this will bring up a template submission that you need to fill in, including the rationale for evaluating this aspect, unit of annotation (is it an aspect of a conversation or of a single turn?), possibility of multiple labels per unit, data attributes required for annotation (see [data submission](#data-submission)), annotation guidelines, and examples for each label.
 
 Expect to discuss your submission with others in the created topic and have a look at the other submissions to provide feedback. If critical issues are raised, these need to be resolved before the [annotation period](#schedule). Our goal is to have a few conversations of the dataset annotated for every submitted aspect without critical issues. If this should not be possible due to a very large number of aspect submissions, we will ask all contributors to vote on which to annotate.
 
@@ -83,9 +82,9 @@ labels-for-first-turn-of-third-conversation;labels-for-second-turn-of-third-conv
 ```
 If the aspect allows for multiple labels per unit, the labels should be written as comma-separated list.
 
-You then need to submit the software as [Docker image](https://www.docker.com/) to TIRA (TODO: howto), which allows everyone to use your metric easily on all other datasets of the same format. We support metrics that use LLMs with instruct programming by providing access to several LLMs through [Chatnoir Chat](https://chat.web.webis.de/), allowing you to switch between LLMs without changing your code and ensuring reproducibility through automated response archiving. Please have a look at the baselines (ToDO: Add baselines) to see how to use this. We are happy to provide you with support for getting your software into a Docker image: please ask [in the Forum](https://www.tira.io/c/scai/scai-eval-metric-submission/15) for help. Also, please have a look at our example metrics (TODO) to get you started.
+You then need to submit the software as [Docker image](https://www.docker.com/) to TIRA (TODO: howto), which allows everyone to use your metric easily on all other datasets of the same format. We support metrics that use LLMs with instruct programming by providing access to several LLMs through [Chatnoir Chat](https://chat.web.webis.de/), allowing you to switch between LLMs without changing your code and ensuring reproducibility through automated response archiving. We are happy to provide you with support for getting your software into a Docker image: please ask [in the Forum](https://www.tira.io/c/scai/scai-eval-metric-submission/15) (login provided upon registration) for help. Also, please have a look at our example metrics (TODO) to get you started.
 
-The final versions of the collected metrics will be made available for everyone to use. Moreover, we will provide a script to run all metrics on an input file. In cases where more than one metric was submitted for an aspect we will compare their results on the annotated dataset as part of the planned overview publication.
+The final versions of the collected metrics will be made available for everyone to use. Moreover, we will provide a script to run all metrics on an input file. In cases where more than one metric was submitted for an aspect, we will compare their results on the annotated dataset as part of the planned overview publication.
 
 
 ### Task Committee
