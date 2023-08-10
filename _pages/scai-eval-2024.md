@@ -18,7 +18,7 @@ What distinguishes a good search-oriented conversation with an AI from a bad one
 
 You can submit both novel and already published material. The submission process (see below) is open to allow for feedback and discussions from the start. All contributors will be invited to co-author a publication (in [SIGIR Forum](https://sigir.org/forum/)) that summarizes the collected evaluation suite. In preparation for discussions at the SCAI workshop and in the paper, we expect every co-author to invest a bit of their time (about two hours each) in February to annotate a few conversations according to the submitted guidelines.
 
-Register here to participate or just to stay informed: (TODO: link to form)
+<a hreF="#">Register here</a> (TODO) to stay informed, <a href="https://www.tira.io/c/scai/8">discuss</a>, and participate!
 
 
 ### Schedule
