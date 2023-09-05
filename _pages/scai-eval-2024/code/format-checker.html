@@ -1,0 +1,211 @@
+---
+title: "SCAI Eval 2024 Format Checker"
+permalink: /scai-eval-2024/code/format-checker
+excerpt: ""
+layout: single
+classes: wide
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.1"
+  overlay_image: /assets/images/bc.png
+---
+
+<style>
+.drop-zone {
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-width: 1px;
+  border-style: dashed;
+  border-radius: 5px;
+}
+.drop-zone.active {
+  background: lightcyan;
+}
+.drop-zone label {
+  padding: 3px;
+  cursor: pointer;
+}
+.drop-zone label:hover {
+  background: gray;
+}
+.drop-zone input[type="file"] {
+  display: none;
+}
+
+.log {
+  width: 100%;
+  height: 50ex;
+  resize: vertical;
+}
+</style>
+
+<h2>SCAI Eval 2024 Format Checker</h2>
+Checks if a file is in the <a href="/scai-eval-2024#data-submission">data submission format</a> for <a href="/scai-eval-2024">SCAI Eval 2024</a>.
+
+<div id="dropZone" class="drop-zone">
+Drop data files here or <label for="filePicker">browse...</label><input type="file" id="filePicker" name="runFile" accept="text/plain, application/jsonlines, application/jsonlines+json" onchange="validateFiles(this.files);">
+</div>
+
+<textarea id="logArea" class="log" disabled="disabled"></textarea>
+
+<script>
+const requiredAttributes = [
+  "/turns", "/turns[]/utterance", "/turns[]/response"
+];
+const format = {
+  turns: [
+    {
+      utterance: "string",
+      response: "string",
+      provenance: [
+        {
+          text: "string"
+        }
+      ]
+    }
+  ]
+};
+
+
+const logAreaElement = document.getElementById("logArea");
+function log(text, lineNumber = undefined) {
+  if (lineNumber === undefined) {
+    logAreaElement.textContent = logAreaElement.textContent + text + "\n";
+  } else {
+    log("  - Line " + lineNumber + ": " + text);
+  }
+}
+function clearLog() {
+  logAreaElement.textContent = "";
+}
+
+function validateAgainstFormat(object, format, path, lineNumber) {
+  if (Array.isArray(format)) {
+    if (!Array.isArray(object)) {
+      log("Expecting an array at '" + path + "', but got " + typeof(object), lineNumber);
+      return false;
+    } else {
+      for (let arrayIndex = 0; arrayIndex < object.length; arrayIndex += 1) {
+        if (!validateAgainstFormat(object[arrayIndex], format[0], path + "[" + arrayIndex + "]", lineNumber)) {
+          return false;
+        }
+      }
+    }
+  } else if (typeof(format) === "object") {
+    if (Array.isArray(object)) {
+      log("Expecting an object at '" + path + "', but got array", lineNumber);
+      return false;
+    } else if (typeof(object) !== "object") {
+      log("Expecting an object at '" + path + "', but got " + typeof(object), lineNumber);
+      return false;
+    } else {
+      const objectKeys = Object.keys(object);
+      const formatKeys = Object.keys(format);
+      for (const unknownKey of objectKeys.filter(key => !formatKeys.includes(key))) {
+        log("Unknown attribute '" + unknownKey + "' at '" + path + "', known attributes are: " + formatKeys, lineNumber);
+        return false;
+      }
+      for (const requiredAttribute of requiredAttributes) {
+        if (requiredAttribute.replaceAll(/\/[^\/]*$/g, "") === path.replaceAll(/\[[0-9]*\]/g, "[]")) {
+          const requiredKey = requiredAttribute.replaceAll(/^.*\//g, "");
+          if (!objectKeys.includes(requiredKey)) {
+            log("Missing required attribute '" + requiredKey + "' at '" + path + "'", lineNumber);
+            return false;
+          }
+        }
+      }
+      for (const key of objectKeys) {
+        if (!validateAgainstFormat(object[key], format[key], path + "/" + key, lineNumber)) {
+          return false;
+        }
+      }
+    }
+  } else {
+    if (Array.isArray(object)) {
+      log("Expecting a " + typeof(format) + " at '" + path + "', but got array", lineNumber);
+      return false;
+    } else if (typeof(object) !== typeof(format)) {
+      log("Expecting a " + typeof(format) + " at '" + path + "', but got " + typeof(object), lineNumber);
+      return false;
+    }
+  }
+  return true;
+}
+
+function validateLine(dataLine, lineNumber) {
+  try {
+    const record = JSON.parse(dataLine);
+    return validateAgainstFormat(record, format, "", lineNumber);
+  } catch ({ name, message }) {
+    log(message, lineNumber);
+    return false;
+  }
+}
+
+function validateLines(dataLines) {
+  let foundError = false;
+  let numRecords = 0;
+  for (let lineNumber = 1; lineNumber <= dataLines.length; ++lineNumber) {
+    const dataLine = dataLines[lineNumber - 1];
+    if (dataLine !== "") {
+      if (validateLine(dataLine, lineNumber)) {
+        numRecords += 1;
+      } else {
+        foundError = true;
+      }
+    }
+  }
+
+  if (foundError) {
+    return false;
+  } else {
+    log("  - Found " + numRecords + " valid data records");
+    return true;
+  }
+}
+
+function validateText(dataText) {
+  const dataLines = dataText.split(/\r?\n/);
+  validateLines(dataLines);
+}
+
+function validateFiles(dataFiles) {
+  clearLog();
+  for (const dataFile of dataFiles) {
+    const reader = new FileReader();
+    reader.onload = fileEvent => {
+      const dataText = reader.result;
+      validateText(dataText);
+    };
+    log("INFO: Validating " + dataFile.name);
+    reader.readAsText(dataFile);
+  }
+}
+
+// Drag & Drop
+
+const dropZone = document.getElementById("dropZone");
+dropZone.addEventListener("dragenter", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  dropZone.classList.add("active");
+}, false);
+dropZone.addEventListener("dragleave", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  dropZone.classList.remove("active");
+}, false);
+dropZone.addEventListener("dragover", event => {
+  event.stopPropagation();
+  event.preventDefault();
+}, false);
+dropZone.addEventListener("drop", event => {
+  event.stopPropagation();
+  event.preventDefault();
+  dropZone.classList.remove("active");
+  validateFiles(event.dataTransfer.files);
+}, false);
+
+</script>

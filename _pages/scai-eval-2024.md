@@ -17,7 +17,7 @@ What distinguishes a good search-oriented conversation with an AI from a bad one
 
 You can submit both novel and already published material to one or more of the three categories. The submission process (see below) is open to allow for feedback and discussions from the start. All contributors will be invited to co-author a publication (in [SIGIR Forum](https://sigir.org/forum/)) that summarizes the collected evaluation suite. In preparation for discussions at the SCAI workshop and in the paper, we expect every co-author to invest a bit of their time (about two hours each) in February to annotate a few conversations according to the submitted guidelines.
 
-<a hreF="#">Register here</a> (TODO) to stay informed, <a href="https://www.tira.io/c/scai/8">discuss</a>, and participate!
+<a hreF="https://forms.gle/hA7SNfk2NuuT7apz9">Register here</a> to stay informed, <a href="https://www.tira.io/c/scai/8">discuss</a>, and participate!
 
 
 ### Schedule
@@ -47,11 +47,13 @@ We seek contributions of search-oriented conversations (with or without AI) in E
 }
 ```
 
-To submit data, prepare it as <code>jsonl</code> file ([JSON lines](https://jsonlines.org/)), where each line contains one JSON object as shown above. Use our format checker (TODO: link to online format checker) to validate your <code>jsonl</code> file. Then submit it via TIRA (TODO: link) using a separate upload group for each dataset you provide. Upload new versions of the same dataset in the same upload group. Once uploaded, use the edit-button to add a short description (at least one paragraph on the data source) to your dataset.
+<!-- TODO: TIRA Submission -->
+To submit data, prepare it as <code>jsonl</code> file ([JSON lines](https://jsonlines.org/)), where each line contains one JSON object as shown above. Use our <a href="/scai-eval-2024/code/format-checker">format checker</a> to validate your <code>jsonl</code> file. Then submit it via TIRA (once submission opens) using a separate upload group for each dataset you provide. Upload new versions of the same dataset in the same upload group. Once uploaded, use the edit-button to add a short description (at least one paragraph on the data source) to your dataset.
 
 To request extensions to the data format or questions on the submission process, create a topic in the [SCAI Eval Data Submission forum](https://www.tira.io/c/scai/scai-eval-data-submission/12) (login provided upon registration).
 
-The collected dataset is freely available and its current version can be downloaded here (TODO: link to download).
+<!-- TODO: Dataset download... Zenodo? -->
+The collected dataset is freely available and an up-to-date version will be available for downloaded here.
 
 
 ### Aspect definition submission
@@ -82,7 +84,10 @@ labels-for-first-turn-of-third-conversation;labels-for-second-turn-of-third-conv
 ```
 If the aspect allows for multiple labels per unit, the labels should be written as comma-separated list.
 
-You then need to submit the software as [Docker image](https://www.docker.com/) to TIRA (TODO: howto), which allows everyone to use your metric easily on all other datasets of the same format. We support metrics that use LLMs with instruct programming by providing access to several LLMs through [Chatnoir Chat](https://chat.web.webis.de/), allowing you to switch between LLMs without changing your code and ensuring reproducibility through automated response archiving. We are happy to provide you with support for getting your software into a Docker image: please ask [in the Forum](https://www.tira.io/c/scai/scai-eval-metric-submission/15) (login provided upon registration) for help. Also, please have a look at our example metrics (TODO) to get you started.
+<!-- TODO: TIRA Howto -->
+<!-- TODO: Example metrics -->
+You then need to submit the software as [Docker image](https://www.docker.com/) to TIRA (Howto in preparation), which allows everyone to use your metric easily on all other datasets of the same format. We support metrics that use LLMs with instruct programming by providing access to several LLMs through [Chatnoir Chat](https://chat.web.webis.de/), allowing you to switch between LLMs without changing your code and ensuring reproducibility through automated response archiving. We are happy to provide you with support for getting your software into a Docker image: please ask [in the Forum](https://www.tira.io/c/scai/scai-eval-metric-submission/15) (login provided upon registration) for help.
+<!-- Please have a look at our example metrics to get you started. -->
 
 The final versions of the collected metrics will be made available for everyone to use. Moreover, we will provide a script to run all metrics on an input file. In cases where more than one metric was submitted for an aspect, we will compare their results on the annotated dataset as part of the planned overview publication.
 

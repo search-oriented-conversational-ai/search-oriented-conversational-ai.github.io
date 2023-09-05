@@ -1,6 +1,6 @@
 ---
-title: "Previous workshops"
-permalink: /previous/
+title: "SCAI events"
+permalink: /events/
 excerpt: ""
 layout: single
 classes: wide
@@ -10,8 +10,11 @@ header:
   overlay_image: /assets/images/bc.png
 ---
 
-### Previous workshops
+### Current events
+* The <a href="../scai-eval-2024/">SCAI Eval shared task 2024</a> (venue to be determined).
 
+
+### Previous events
 * The <a href="../scai-2022/">7th workshop</a> was co-located with <a href="https://sigir.org/sigir2022/">SIGIR 2022</a> and featured the <a href="../scai-qrecc-2022/">SCAI QReCC shared task 2022</a>.
 * The <a href="../scai-2021/">6th workshop</a> was held online as an independent event and featured the <a href="../scai-qrecc-2021/">SCAI QReCC shared task 2021</a>.
 * The <a href="https://scai-workshop.github.io/2020/">5th workshop</a> was co-located with <a href="https://2020.emnlp.org">EMNLP 2020</a> and featured the <a href="http://convai.io/">ClariQ shared task</a>.
