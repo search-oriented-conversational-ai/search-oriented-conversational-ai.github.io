@@ -45,7 +45,7 @@ header:
 Checks if a file is in the <a href="/scai-eval-2024#data-submission">data submission format</a> for <a href="/scai-eval-2024">SCAI Eval 2024</a>.
 
 <div id="dropZone" class="drop-zone">
-Drop data files here or <label for="filePicker">browse...</label><input type="file" id="filePicker" name="runFile" accept="text/plain, application/jsonlines, application/jsonlines+json" onchange="validateFiles(this.files);">
+Drop data files here or <label for="filePicker">browse...</label><input type="file" id="filePicker" name="runFile" accept="text/plain, application/x-ndjson, application/x-ldjson" onchange="validateFiles(this.files);">
 </div>
 
 <textarea id="logArea" class="log" disabled="disabled"></textarea>
@@ -55,12 +55,15 @@ const requiredAttributes = [
   "/turns", "/turns[]/utterance", "/turns[]/response"
 ];
 const format = {
+  id: "string",
   turns: [
     {
+      id: "string",
       utterance: "string",
       response: "string",
       provenance: [
         {
+          id: "string",
           text: "string"
         }
       ]
