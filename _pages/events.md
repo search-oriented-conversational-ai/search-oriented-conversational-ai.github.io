@@ -11,7 +11,7 @@ header:
 ---
 
 ### Current events
-* The <a href="../scai-eval-2024/">SCAI Eval shared task 2024</a> (venue to be determined).
+* The <a href="../scai-2024/">8th workshop</a> (venue to be determined) features the <a href="../scai-eval-2024/">SCAI Eval shared task 2024</a>.
 
 
 ### Previous events
