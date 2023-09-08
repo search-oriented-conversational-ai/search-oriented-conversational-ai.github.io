@@ -31,3 +31,7 @@ The evaluation is performed on the test split of the QReCC dataset. We use the g
 ### Submission
 
 You need access to TIRA to be able to upload your submissions. Request access to TIRA by filling out <a href="https://forms.gle/fwfo6fUoHUXdsGGM6">this short form</a>.
+
+### Task Committee
+* Maik Fröbe, Martin Luther University of Halle-Wittenberg
+* Svitlana Vakulenko, University of Amsterdam
