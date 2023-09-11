@@ -90,5 +90,6 @@ The final versions of the collected metrics will be made available for everyone 
 * Maik Fröbe, Friedrich-Schiller-Universität Jena
 * Andrea Papenmeier, University of Twente
 * Alexander Frummet, Universität Regensburg
+* Paul Owoicho, University of Glasgow
 
 
