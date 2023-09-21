@@ -15,7 +15,7 @@ What distinguishes a good search-oriented conversation with an AI from a bad one
 2. [Aspect definitions](#aspect-definition-submission). To compile a comprehensive overview of aspects to evaluate search-oriented conversations by, we seek contributions in terms of definitions and guidelines for human ground-truth annotation.
 3. [Metrics](#metric-submission). To create a software package for the evaluation of search-oriented conversations, we seek software that attempts to automatically recreate human annotations for search-oriented conversations (see 2.).
 
-You can submit both novel and already published material to one or more of the three categories. The submission process (see below) is open to allow for feedback and discussions from the start. All contributors will be invited to co-author a publication (in [SIGIR Forum](https://sigir.org/forum/)) that summarizes the collected evaluation suite. In preparation for discussions at the SCAI workshop and in the paper, we expect every co-author to invest a bit of their time (about two hours each) in February to annotate a few conversations according to the submitted guidelines.
+You can submit both novel and already published resources to one or more of the three categories. The submission process (see below) is open to allow for feedback and discussions from the start. All contributors will be invited to co-author a publication (in [SIGIR Forum](https://sigir.org/forum/)) that summarizes the collected evaluation suite. In preparation for discussions at the SCAI workshop and in the paper, we expect every co-author to invest a bit of their time (about two hours each) in February to annotate a few conversations according to the submitted guidelines. Moreover, we would like to discuss with you at the workshop the details of a follow-up competition on submitting search-oriented conversation systems on the collected resources.
 
 <a class="btn btn--info" href="https://forms.gle/hA7SNfk2NuuT7apz9">REGISTER</a> to stay informed, <a href="https://www.tira.io/c/scai/8">discuss</a>, and participate!
 
@@ -42,7 +42,12 @@ We seek contributions of search-oriented conversations (with or without AI) in E
       "utterance": "markdown-text-sent-by-user",
       "response": "markdown-text-sent-as-response-by-system",
       "provenance": [ 
-        { "id": "source-text-id", "text": "source-text-for-response" }
+        { 
+          "id": "source-text-id",
+          "title": "title-of-source-text-for-response",
+          "text": "source-text-for-response",
+          "url": "url-of-source-text-for-response"
+        }
       ]
     }
   ]

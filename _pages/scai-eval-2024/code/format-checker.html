@@ -51,27 +51,9 @@ Drop data files here or <label for="filePicker">browse...</label><input type="fi
 <textarea id="logArea" class="log" disabled="disabled"></textarea>
 
 <script>
-const requiredAttributes = [
-  "/turns", "/turns[]/utterance", "/turns[]/response"
-];
-const format = {
-  id: "string",
-  turns: [
-    {
-      id: "string",
-      utterance: "string",
-      response: "string",
-      provenance: [
-        {
-          id: "string",
-          text: "string"
-        }
-      ]
-    }
-  ]
-};
+{% include scai-eval24-dataset-validator.js %}
 
-
+// code for web UI
 const logAreaElement = document.getElementById("logArea");
 function log(text, lineNumber = undefined) {
   if (lineNumber === undefined) {
@@ -84,103 +66,13 @@ function clearLog() {
   logAreaElement.textContent = "";
 }
 
-function validateAgainstFormat(object, format, path, lineNumber) {
-  if (Array.isArray(format)) {
-    if (!Array.isArray(object)) {
-      log("Expecting an array at '" + path + "', but got " + typeof(object), lineNumber);
-      return false;
-    } else {
-      for (let arrayIndex = 0; arrayIndex < object.length; arrayIndex += 1) {
-        if (!validateAgainstFormat(object[arrayIndex], format[0], path + "[" + arrayIndex + "]", lineNumber)) {
-          return false;
-        }
-      }
-    }
-  } else if (typeof(format) === "object") {
-    if (Array.isArray(object)) {
-      log("Expecting an object at '" + path + "', but got array", lineNumber);
-      return false;
-    } else if (typeof(object) !== "object") {
-      log("Expecting an object at '" + path + "', but got " + typeof(object), lineNumber);
-      return false;
-    } else {
-      const objectKeys = Object.keys(object);
-      const formatKeys = Object.keys(format);
-      for (const unknownKey of objectKeys.filter(key => !formatKeys.includes(key))) {
-        log("Unknown attribute '" + unknownKey + "' at '" + path + "', known attributes are: " + formatKeys, lineNumber);
-        return false;
-      }
-      for (const requiredAttribute of requiredAttributes) {
-        if (requiredAttribute.replaceAll(/\/[^\/]*$/g, "") === path.replaceAll(/\[[0-9]*\]/g, "[]")) {
-          const requiredKey = requiredAttribute.replaceAll(/^.*\//g, "");
-          if (!objectKeys.includes(requiredKey)) {
-            log("Missing required attribute '" + requiredKey + "' at '" + path + "'", lineNumber);
-            return false;
-          }
-        }
-      }
-      for (const key of objectKeys) {
-        if (!validateAgainstFormat(object[key], format[key], path + "/" + key, lineNumber)) {
-          return false;
-        }
-      }
-    }
-  } else {
-    if (Array.isArray(object)) {
-      log("Expecting a " + typeof(format) + " at '" + path + "', but got array", lineNumber);
-      return false;
-    } else if (typeof(object) !== typeof(format)) {
-      log("Expecting a " + typeof(format) + " at '" + path + "', but got " + typeof(object), lineNumber);
-      return false;
-    }
-  }
-  return true;
-}
-
-function validateLine(dataLine, lineNumber) {
-  try {
-    const record = JSON.parse(dataLine);
-    return validateAgainstFormat(record, format, "", lineNumber);
-  } catch ({ name, message }) {
-    log(message, lineNumber);
-    return false;
-  }
-}
-
-function validateLines(dataLines) {
-  let foundError = false;
-  let numRecords = 0;
-  for (let lineNumber = 1; lineNumber <= dataLines.length; ++lineNumber) {
-    const dataLine = dataLines[lineNumber - 1];
-    if (dataLine !== "") {
-      if (validateLine(dataLine, lineNumber)) {
-        numRecords += 1;
-      } else {
-        foundError = true;
-      }
-    }
-  }
-
-  if (foundError) {
-    return false;
-  } else {
-    log("  - Found " + numRecords + " valid data records");
-    return true;
-  }
-}
-
-function validateText(dataText) {
-  const dataLines = dataText.split(/\r?\n/);
-  validateLines(dataLines);
-}
-
 function validateFiles(dataFiles) {
   clearLog();
   for (const dataFile of dataFiles) {
     const reader = new FileReader();
     reader.onload = fileEvent => {
       const dataText = reader.result;
-      validateText(dataText);
+      validateText(dataText, log);
     };
     log("INFO: Validating " + dataFile.name);
     reader.readAsText(dataFile);
