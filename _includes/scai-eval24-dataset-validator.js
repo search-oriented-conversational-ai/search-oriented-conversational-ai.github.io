@@ -1,24 +1,6 @@
 const requiredAttributes = [
   "/turns", "/turns[]/utterance", "/turns[]/response"
 ];
-const format = {
-  id: "string",
-  turns: [
-    {
-      id: "string",
-      utterance: "string",
-      response: "string",
-      provenance: [
-        {
-          id: "string",
-          text: "string",
-          title: "string",
-          url: "string"
-        }
-      ]
-    }
-  ]
-};
 
 function validateAgainstFormat(object, format, path, lineNumber, log) {
   if (Array.isArray(format)) {
@@ -27,7 +9,7 @@ function validateAgainstFormat(object, format, path, lineNumber, log) {
       return false;
     } else {
       for (let arrayIndex = 0; arrayIndex < object.length; arrayIndex += 1) {
-        if (!validateAgainstFormat(object[arrayIndex], format[0], path + "[" + arrayIndex + "]", lineNumber)) {
+        if (!validateAgainstFormat(object[arrayIndex], format[0], path + "[" + arrayIndex + "]", lineNumber, log)) {
           return false;
         }
       }
@@ -56,7 +38,7 @@ function validateAgainstFormat(object, format, path, lineNumber, log) {
         }
       }
       for (const key of objectKeys) {
-        if (!validateAgainstFormat(object[key], format[key], path + "/" + key, lineNumber)) {
+        if (!validateAgainstFormat(object[key], format[key], path + "/" + key, lineNumber, log)) {
           return false;
         }
       }

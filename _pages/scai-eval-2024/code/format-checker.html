@@ -51,6 +51,7 @@ Drop data files here or <label for="filePicker">browse...</label><input type="fi
 <textarea id="logArea" class="log" disabled="disabled"></textarea>
 
 <script>
+const format = {% include scai-eval24-format.json %};
 {% include scai-eval24-dataset-validator.js %}
 
 // code for web UI
@@ -82,15 +83,20 @@ function validateFiles(dataFiles) {
 // Drag & Drop
 
 const dropZone = document.getElementById("dropZone");
+let dragCounter = 0;
 dropZone.addEventListener("dragenter", event => {
+  dragCounter += 1;
   event.stopPropagation();
   event.preventDefault();
   dropZone.classList.add("active");
 }, false);
 dropZone.addEventListener("dragleave", event => {
+  dragCounter -= 1;
   event.stopPropagation();
   event.preventDefault();
-  dropZone.classList.remove("active");
+  if (dragCounter === 0) {
+    dropZone.classList.remove("active");
+  }
 }, false);
 dropZone.addEventListener("dragover", event => {
   event.stopPropagation();

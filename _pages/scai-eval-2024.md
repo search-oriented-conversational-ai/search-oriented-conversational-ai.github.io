@@ -34,24 +34,7 @@ You can submit both novel and already published resources to one or more of the 
 We seek contributions of search-oriented conversations (with or without AI) in English. Already published conversations are also welcome. Submissions must adhere to the following format, but the only required attributes are <code>turns</code>, <code>utterance</code>, and <code>response</code>. If your data contains attributes that are not shown here, we will expand this format upon your request. The current format is:
 
 ```json
-{
-  "id": "conversation-id",
-  "turns": [
-    {
-      "id": "turn-id",
-      "utterance": "markdown-text-sent-by-user",
-      "response": "markdown-text-sent-as-response-by-system",
-      "provenance": [ 
-        { 
-          "id": "source-text-id",
-          "title": "title-of-source-text-for-response",
-          "text": "source-text-for-response",
-          "url": "url-of-source-text-for-response"
-        }
-      ]
-    }
-  ]
-}
+{% include scai-eval24-format.json %}
 ```
 
 <!-- TODO: TIRA Submission -->

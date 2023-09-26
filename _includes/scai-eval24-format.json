@@ -1,0 +1,27 @@
+{
+  "id": "ID of the conversation in the original dataset",
+  "topic": "Phrase describing the topic of the conversation",
+  "turns": [
+    {
+      "id": "ID of the turn in the original dataset",
+      "utterance": "Text that was sent by user (markdown)",
+      "response": "Text that was sent by the system in response to utterance (markdown)",
+      "rewritten_utterance": [
+        {
+          "source": "Name of the method used to rewrite the text, or 'human' if some human rewrote it",
+          "text": "The utterance (see above) rewritten to make it less context dependent"
+        }
+      ],
+      "topic": "Phrase describing the topic of the turn",
+      "provenance": [
+        {
+          "id": "ID of the text in the dataset",
+          "dataset": "Name of the dataset of the text",
+          "text": "The text used to create the response (among others)",
+          "title": "The title of the text",
+          "url": "An URL of the text"
+        }
+      ]
+    }
+  ]
+}
