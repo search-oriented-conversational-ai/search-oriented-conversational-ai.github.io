@@ -3,19 +3,19 @@ Call for participation: SCAI Eval 2024 Shared Task on Conversational Search Eval
 
 Conversational search has many faces, and we want so see them all. Rather than evaluating systems, this shared task calls on the community to gather comprehensive evaluation resources to provide a clearer picture of evaluation:
 
-1. Example data of diverse search-oriented conversations (also small-scale);
+1. Example data of diverse search-oriented conversations;
 2. Definitions and annotation guidelines for aspects to evaluate (e.g., correctness, coherence, readability); and
 3. Implementations of evaluation metrics.
 
 Both novel and already published contributions are welcome. Contributors will be invited to present at the next SCAI workshop (venue to be determined) and co-author a SIGIR Forum article. So join our mailing list at  https://groups.google.com/g/scai-info  to stay up-to-date with our task and get into contact.
 
 
-Web page:     https://scai.info/scai-eval-2024/     (details, instructions, examples)
-Mailing list: https://groups.google.com/g/scai-info (stay up-to-date, ask questions)
+Web: https://scai.info/scai-eval-2024/ (details, instructions, examples)
+Mailing list: https://groups.google.com/g/scai-info
 
 
 Submission deadlines:
-- January 15, 2024: deadline for new aspect definitions
+- January 15, 2024: deadline for aspect definitions
 - January 29, 2024: deadline for data and metrics
 
 
