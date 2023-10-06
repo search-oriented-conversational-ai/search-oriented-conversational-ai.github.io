@@ -17,6 +17,8 @@ What distinguishes a good search-oriented conversation with an AI from a bad one
 
 You can submit both novel and already published resources to one or more of the three categories. The submission process (see below) is open to allow for feedback and discussions from the start. All contributors will be invited to co-author a publication (in [SIGIR Forum](https://sigir.org/forum/)) that summarizes the collected evaluation suite. In preparation for discussions on the resources and future uses at the SCAI workshop and in the paper, we expect every co-author to invest a bit of their time (about three hours each) in February to annotate a few conversations according to the submitted guidelines.
 
+To stay up-to-date, join our mailinglist at [scai-info@googlegroups.com](https://groups.google.com/g/scai-info)!
+
 
 ### Schedule
 * October 2, 2023: Submission starts
