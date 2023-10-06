@@ -1,0 +1,9 @@
+Call for participation!
+
+SCAI Eval 2024 targets the evaluation of conversational search systems. Submit your data, aspect definitions (e.g., "coherence"), and metrics (all published or new) to help build a comprehensive collection of evaluation resources:
+
+https://scai.info/scai-eval-2024/
+
+
+
+https://twitter.com/KieselJohannes/status/1710231276899246334
