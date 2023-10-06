@@ -1,5 +1,5 @@
-Call for participation: SCAI Eval 2024 Shared Task on Conversational Search
-===========================================================================
+Call for participation: SCAI Eval 2024 Shared Task on Conversational Search Evaluation
+======================================================================================
 
 Conversational search has many faces, and we want so see them all. Rather than evaluating systems, this shared task calls on the community to gather comprehensive evaluation resources to provide a clearer picture of evaluation:
 
