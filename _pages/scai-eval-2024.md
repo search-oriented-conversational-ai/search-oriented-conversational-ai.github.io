@@ -27,7 +27,7 @@ To stay up-to-date, join our mailinglist at [scai-info@googlegroups.com](https:/
 * February 5, 2024: Annotation period starts
 * February 23, 2024: Annotation period ends
 * March 4, 2024: Results and annotations release
-* TBD: SCAI workshop and planning for overview publication
+* March: SCAI workshop at <a href="https://chiir2024.github.io/index.html">CHIIR</a> and planning for overview publication
 
 
 ### Data submission
