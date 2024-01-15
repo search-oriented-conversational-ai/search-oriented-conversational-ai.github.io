@@ -22,8 +22,7 @@ To stay up-to-date, join our mailinglist at [scai-info@googlegroups.com](https:/
 
 ### Schedule
 * October 2, 2023: Submission starts
-* January 15, 2024: Submission deadline for new aspect definitions (but can be updated until Jan. 29)
-* January 29, 2024: Submission deadline for data and metrics
+* January 29, 2024: Submission deadline for data, aspect definitions, and metrics (updated)
 * February 5, 2024: Annotation period starts
 * February 23, 2024: Annotation period ends
 * March 4, 2024: Results and annotations release
