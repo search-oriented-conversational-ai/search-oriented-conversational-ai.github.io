@@ -9,13 +9,12 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-#gem "github-pages", group: :jekyll_plugins
-gem "minimal-mistakes-jekyll"
-gem "kramdown-parser-gfm"
-gem "jekyll", "=3.9.3"
+gem "github-pages", group: :jekyll_plugins
 
 # To upgrade, run `bundle update`.
 
+gem "jekyll", "~> 3.5"
+gem "minimal-mistakes-jekyll"
 gem "webrick"
 
 # The following plugins are automatically loaded by the theme-gem:
