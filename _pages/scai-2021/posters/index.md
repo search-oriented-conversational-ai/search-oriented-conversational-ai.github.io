@@ -1,7 +1,6 @@
 ---
 title: "SCAI 2021 Posters"
 permalink: /scai-2021/posters/
-excerpt: ""
 layout: single
 classes: wide
 header:

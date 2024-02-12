@@ -1,7 +1,6 @@
 ---
 title: "SCAI events"
 permalink: /events/
-excerpt: ""
 layout: single
 classes: wide
 header:
