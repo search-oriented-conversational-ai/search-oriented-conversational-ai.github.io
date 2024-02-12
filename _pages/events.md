@@ -11,7 +11,7 @@ header:
 ---
 
 ### Current events
-* The <a href="/scai-2024/">8th workshop</a> will be co-located with <a href="https://chiir2024.github.io/index.html">CHIIR 2024</a> and feature the <a href="/scai-eval-2024/">SCAI Eval shared task 2024</a>.
+* The <a href="/scai-2024/">8th workshop</a> will be co-located with <a href="https://chiir2024.github.io/index.html">CHIIR 2024</a>.
 
 
 ### Previous events

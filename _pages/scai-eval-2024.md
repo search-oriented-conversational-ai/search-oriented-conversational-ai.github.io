@@ -9,6 +9,8 @@ header:
   overlay_image: /assets/images/bc.png
 ---
 
+Note: Cancelled.
+
 What distinguishes a good search-oriented conversation with an AI from a bad one? Using a single aspect of conversations for evaluation fails to produce a complete picture, as aspects like information relevance, being true to some source, ease of understanding, and many more play a role. To assist researchers in evaluating their conversational search systems, this shared task calls to the community to collect comprehensive evaluation resources: example data of diverse search-oriented conversations, definitions and annotation guidelines for aspects to evaluate, and implemented evaluation metrics.
 
 1. [Data](#data-submission). To capture the variety of search-oriented conversations (e.g., written or spoken, explorative or target-oriented), we seek contributions of one or more example conversations in English and in a common format.
