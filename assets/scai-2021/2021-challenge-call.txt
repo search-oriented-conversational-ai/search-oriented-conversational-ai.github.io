@@ -36,4 +36,4 @@ Svitlana, Johannes and Maik
 [1] Anantha, R., Vakulenko, S., Tu, Z., Longpre, S., Pulman, S., & Chappidi, S. (2020). Open-Domain Question Answering Goes Conversational via Question Rewriting. NAACL’21 (to appear) https://arxiv.org/abs/2010.04898
 [2] https://github.com/apple/ml-qrecc
 [3] QReCC - Question Rewriting in Conversational Context (Version 2021-05-19) [Data set] https://zenodo.org/record/4772532#.YK48Fy0Rp0s
-[4] SCAI: Search-Oriented Conversational AI Online Event 8 October 2021 https://scai.info
+[4] SCAI: Search-Oriented Conversational AI Online Event 8 October 2021
