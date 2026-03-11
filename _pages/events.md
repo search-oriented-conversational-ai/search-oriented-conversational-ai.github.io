@@ -10,10 +10,11 @@ header:
 ---
 
 ### Current events
-* The <a href="/scai-2025/">9th workshop</a> will be co-located with <a href="https://2025.ijcai.org/">IJCAI 2025</a>.
+* The <a href="/scai-2026/">10th workshop</a> will be co-located with <a href="https://sigir2026.org/">SIGIR 2026</a>.
 
 
 ### Previous events
+* The <a href="/scai-2025/">9th workshop</a> was co-located with <a href="https://2025.ijcai.org/">IJCAI 2025</a>.
 * The <a href="/scai-2024/">8th workshop</a> was co-located with <a href="https://chiir2024.github.io/index.html">CHIIR 2024</a>.
 * The <a href="/scai-2022/">7th workshop</a> was co-located with <a href="https://sigir.org/sigir2022/">SIGIR 2022</a> and featured the <a href="/scai-qrecc-2022/">SCAI QReCC shared task 2022</a>.
 * The <a href="/scai-2021/">6th workshop</a> was held online as an independent event and featured the <a href="/scai-qrecc-2021/">SCAI QReCC shared task 2021</a>.
@@ -22,5 +23,3 @@ header:
 * The <a href="https://scai-workshop.github.io/www2019/">3rd workshop</a> was co-located with <a href="https://thewebconf.org/www2019/">WebConf 2019</a>.
 * The <a href="https://scai-workshop.github.io/2018/">2nd workshop</a> was co-located with <a href="https://emnlp2018.org/">EMNLP 2018</a>.
 * The <a href="https://scai-workshop.github.io/2017/">1st workshop</a> was co-located with <a href="https://sigir.org/ictir2017/">ICTIR 2017</a>.
-
-
