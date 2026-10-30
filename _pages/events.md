@@ -10,10 +10,11 @@ header:
 ---
 
 ### Current events
-* The <a href="/scai-2026/">10th workshop</a> will be co-located with <a href="https://sigir2026.org/">SIGIR 2026</a>.
+* The <a href="/scai-2027/">11th workshop</a> will be co-located with <a href="https://www.ecir2027.co.uk/">ECIR 2027</a>.
 
 
 ### Previous events
+* The <a href="/scai-2026/">10th workshop</a> was co-located with <a href="https://sigir2026.org/">SIGIR 2026</a> and featured the <a href="https://www.trecikat.com/">SCAI iKAT shared task 2026</a>.
 * The <a href="/scai-2025/">9th workshop</a> was co-located with <a href="https://2025.ijcai.org/">IJCAI 2025</a>.
 * The <a href="/scai-2024/">8th workshop</a> was co-located with <a href="https://chiir2024.github.io/index.html">CHIIR 2024</a>.
 * The <a href="/scai-2022/">7th workshop</a> was co-located with <a href="https://sigir.org/sigir2022/">SIGIR 2022</a> and featured the <a href="/scai-qrecc-2022/">SCAI QReCC shared task 2022</a>.

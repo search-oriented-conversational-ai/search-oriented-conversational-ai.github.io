@@ -1,5 +1,5 @@
 ---
 layout: forward
-target: scai-2026/
+target: scai-2027/
 ---
 
